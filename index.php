@@ -27,20 +27,24 @@ if ($_SERVER["REQUEST_METHOD"]== "POST") {
         <label for="prodotto">Prodotto</label>
         <input type="text" id="prodotto" name="prodotto" require maxlength="30">
         <p class="msg-errore"><?php
-        if ($erroreprodotto!= null);
-        echo $erroreprodotto;
+        if ($erroreprezzo!= null) {
+            echo $erroreprezzo;    
+        }
         ?></p>
         <label for="prezzo">Prezzo (€)</label>
-        <input type="number" id="prezzo" name="prezzo" class="errore" require>
+        <input type="number" id="prezzo" name="prezzo" class="<?php if ($erroreprezzo!= null) {echo "errore";}?>" require>
         <p class="msg-errore"><?php
-        if ($erroreprezzo!= null);
-        echo $erroreprezzo;
+        if ($erroreprezzo!= null) {
+            echo $erroreprezzo;    
+        }
+        
         ?></p>
         <label for="sconto">Sconto (%)</label>
         <input type="number" id="sconto" name="sconto" require>
         <p class="msg-errore"><?php
-        if ($erroresconto!= null);
-        echo $erroresconto;
+        if ($erroreprezzo!= null) {
+            echo $erroreprezzo;    
+        }
         ?></p>
         <button type="submit">Calcola</button>
     </form>
